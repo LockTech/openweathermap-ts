@@ -15,6 +15,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./Unit"), exports);
+__exportStar(require("./AirPollutionResponse"), exports);
 __exportStar(require("./CountryCode"), exports);
 __exportStar(require("./Language"), exports);
 __exportStar(require("./QueryType"), exports);

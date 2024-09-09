@@ -2,6 +2,7 @@ export declare const SCHEME = "https://";
 export declare const API_HOST = "api.openweathermap.org/";
 export declare const WEATHER_API_NAME = "data/";
 export declare const WEATHER_API_VERSION = "2.5/";
+export declare const AIR_POLLUTION = "air_pollution";
 export declare const CURRENT_WEATHER_ENDPOINT = "weather";
 export declare const FORECAST = "forecast";
 export declare const GEOCODING_API_NAME = "geo/";

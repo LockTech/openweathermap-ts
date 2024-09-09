@@ -1,4 +1,5 @@
 export * from './Unit'
+export * from './AirPollutionResponse'
 export * from './CountryCode'
 export * from './Language'
 export * from './QueryType'

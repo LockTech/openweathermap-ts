@@ -1,12 +1,13 @@
 import OpenWeather from './OpenWeather';
 import {
+  AirPollutionResponse,
   CountryCode,
   GetByCityNameChild,
   CurrentWeatherResponse,
   ThreeHourResponse,
   InitialSettings
 } from './types';
-import { CURRENT_WEATHER_ENDPOINT, FORECAST } from './helpers';
+import { AIR_POLLUTION, CURRENT_WEATHER_ENDPOINT, FORECAST } from './helpers';
 import Geocoding from './geocoding/Geocoding';
 
 class OpenWeatherMap extends OpenWeather {
@@ -44,7 +45,7 @@ class OpenWeatherMap extends OpenWeather {
   /**
    * @summary uses the geolocation-API to get the current weather by city name
    * @param location
-   * @returns 
+   * @returns
    */
   public getCurrentWeatherByCityName(
     location?: GetByCityNameChild
@@ -100,7 +101,7 @@ class OpenWeatherMap extends OpenWeather {
   }
 
   /**
-* 
+*
 * @deprecated  Please note that API requests by city name, zip-codes and city id have been deprecated. Although they are still available for use, bug fixing and updates are no longer available for this functionality. Please use Geocoder API if you need automatic convert city names and zip-codes to corrdinates vice versa. (https://openweathermap.org/weather#builtin)
 */
   public async builtInGetCurrentWeatherByZipcode(
@@ -125,9 +126,9 @@ class OpenWeatherMap extends OpenWeather {
 
   /**
    * @summary uses the geolocation-API to get the current weather by zipcode and then uses the geolocation to get the current weather
-   * @param zipcode 
-   * @param countryCode 
-   * @returns 
+   * @param zipcode
+   * @param countryCode
+   * @returns
    */
   public async getCurrentWeatherByZipcode(
     zipcode?: string,
@@ -146,7 +147,7 @@ class OpenWeatherMap extends OpenWeather {
   }
 
   /**
- * 
+ *
  * @deprecated  Please note that API requests by city name, zip-codes and city id have been deprecated. Although they are still available for use, bug fixing and updates are no longer available for this functionality. Please use Geocoder API if you need automatic convert city names and zip-codes to corrdinates vice versa. (https://openweathermap.org/forecast5#builtin)
  */
   public builtInGetThreeHourForecastByCityName(
@@ -180,7 +181,7 @@ class OpenWeatherMap extends OpenWeather {
     });
   }
   /**
- * 
+ *
  * @deprecated  Please note that API requests by city name, zip-codes and city id have been deprecated. Although they are still available for use, bug fixing and updates are no longer available for this functionality. Please use Geocoder API if you need automatic convert city names and zip-codes to corrdinates vice versa. (https://openweathermap.org/forecast5#builtin)
  */
   public getThreeHourForecastByCityId(
@@ -219,7 +220,7 @@ class OpenWeatherMap extends OpenWeather {
   }
 
   /**
- * 
+ *
  * @deprecated  Please note that API requests by city name, zip-codes and city id have been deprecated. Although they are still available for use, bug fixing and updates are no longer available for this functionality. Please use Geocoder API if you need automatic convert city names and zip-codes to corrdinates vice versa. (https://openweathermap.org/forecast5#builtin)
  */
   public async getThreeHourForecastByZipcode(
@@ -239,6 +240,25 @@ class OpenWeatherMap extends OpenWeather {
         reject(error);
       }
     });
+  }
+
+  public async getAirPollutionByGeoCoordinates(
+    latitude?: number,
+    longitude?: number
+  ): Promise<AirPollutionResponse> {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const airPollution = (await this.getByGeoCoordinates({
+          latitude,
+          longitude,
+          queryType: AIR_POLLUTION
+        })) as AirPollutionResponse
+
+        resolve(airPollution)
+      } catch (error) {
+        reject(error);
+      }
+    })
   }
 }
 
