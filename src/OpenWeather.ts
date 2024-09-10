@@ -18,12 +18,12 @@ import Geocoding from './geocoding/Geocoding';
 class OpenWeather extends BaseAPI {
   protected location: Location;
 
-  protected geocoding: Geocoding;
+  public geocoding: Geocoding;
 
   constructor({
     apiKey,
     units = 'imperial',
-    language = 'en' 
+    language = 'en'
   }: InitialSettings) {
     super({
       apiKey,
@@ -159,7 +159,7 @@ class OpenWeather extends BaseAPI {
       }
     });
   }
-  
+
 
 
   /**
@@ -182,7 +182,7 @@ class OpenWeather extends BaseAPI {
         const coordinates = await this.geocoding.getGeoCoordinatesByLocationName(cityName, countryCode, state);
 
         const { lat: latitude, lon: longitude } = coordinates[0];
-        
+
 
         const currentWeather = this.getByGeoCoordinates({ latitude, longitude, queryType });
 
@@ -193,7 +193,7 @@ class OpenWeather extends BaseAPI {
     });
   }
   /**
-   * 
+   *
    * @deprecated  Please note that API requests by city name, zip-codes and city id have been deprecated. Although they are still available for use, bug fixing and updates are no longer available for this functionality. Please use Geocoder API if you need automatic convert city names and zip-codes to corrdinates vice versa. (https://openweathermap.org/forecast5#builtin)
    */
   public getByCityId({ cityId, queryType }: GetByCityId) {
@@ -257,7 +257,7 @@ class OpenWeather extends BaseAPI {
   }
 
   /**
- * 
+ *
  * @deprecated  Please note that API requests by city name, zip-codes and city id have been deprecated. Although they are still available for use, bug fixing and updates are no longer available for this functionality. Please use Geocoder API if you need automatic convert city names and zip-codes to corrdinates vice versa. (https://openweathermap.org/forecast5#builtin)
  */
   public builtInGetByZipcode(

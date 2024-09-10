@@ -3,7 +3,7 @@ import BaseAPI from './BaseAPI';
 import Geocoding from './geocoding/Geocoding';
 declare class OpenWeather extends BaseAPI {
     protected location: Location;
-    protected geocoding: Geocoding;
+    geocoding: Geocoding;
     constructor({ apiKey, units, language }: InitialSettings);
     setApiKey(apiKey: string): void;
     setUnits(units: Unit): void;
