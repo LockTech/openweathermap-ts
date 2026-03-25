@@ -1,5 +1,5 @@
-import OpenWeather from './OpenWeather';
-import { AirPollutionResponse, CountryCode, GetByCityNameChild, CurrentWeatherResponse, ThreeHourResponse, InitialSettings } from './types';
+import OpenWeather from './OpenWeather.js';
+import { AirPollutionResponse, CountryCode, GetByCityNameChild, CurrentWeatherResponse, ThreeHourResponse, InitialSettings } from './types/index.js';
 declare class OpenWeatherMap extends OpenWeather {
     constructor({ apiKey, units, language }: InitialSettings);
     /**

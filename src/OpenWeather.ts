@@ -1,4 +1,3 @@
-import fetch from 'node-fetch';
 import {
   Unit,
   CountryCode,
@@ -10,10 +9,10 @@ import {
   GetByCityName,
   GetByCityId,
   GetByGeoCoordinates
-} from './types';
-import { SCHEME, API_HOST, WEATHER_API_VERSION, WEATHER_API_NAME } from './helpers';
-import BaseAPI from './BaseAPI';
-import Geocoding from './geocoding/Geocoding';
+} from './types/index.js';
+import { SCHEME, API_HOST, WEATHER_API_VERSION, WEATHER_API_NAME } from './helpers/index.js';
+import BaseAPI from './BaseAPI.js';
+import Geocoding from './geocoding/Geocoding.js';
 
 class OpenWeather extends BaseAPI {
   protected location: Location;

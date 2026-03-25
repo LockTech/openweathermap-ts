@@ -1,54 +1,50 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var helpers_1 = require("./helpers");
-var BaseAPI = /** @class */ (function () {
-    function BaseAPI(_a) {
-        var apiKey = _a.apiKey, _b = _a.units, units = _b === void 0 ? 'imperial' : _b, _c = _a.language, language = _c === void 0 ? 'en' : _c;
+import { SCHEME, API_HOST } from './helpers/index.js';
+class BaseAPI {
+    constructor({ apiKey, units = 'imperial', language = 'en' }) {
         this.settings = {
-            apiKey: apiKey,
-            units: units,
-            language: language
+            apiKey,
+            units,
+            language
         };
-        this.BASE_URL = helpers_1.SCHEME + helpers_1.API_HOST;
+        this.BASE_URL = SCHEME + API_HOST;
     }
     // ***
     // ***
     // Setters
     // ***
     // ***
-    BaseAPI.prototype.setApiKey = function (apiKey) {
+    setApiKey(apiKey) {
         this.settings.apiKey = apiKey;
-    };
-    BaseAPI.prototype.setUnits = function (units) {
+    }
+    setUnits(units) {
         this.settings.units = units;
-    };
-    BaseAPI.prototype.setLanguage = function (language) {
+    }
+    setLanguage(language) {
         this.settings.language = language;
-    };
-    BaseAPI.prototype.clearSettings = function () {
+    }
+    clearSettings() {
         this.settings = {
             apiKey: 'youNeedValidApiKey',
             units: 'imperial',
             language: 'en'
         };
-    };
+    }
     // ***
     // ***
     // Getters
     // ***
     // ***
-    BaseAPI.prototype.getAllSettings = function () {
+    getAllSettings() {
         return this.settings;
-    };
+    }
     // ***
     // ***
     // Private
     // ***
     // ***
-    BaseAPI.prototype.buildURL = function (queryType, query) {
-        var _a = this, BASE_URL = _a.BASE_URL, settings = _a.settings;
-        return "".concat(BASE_URL + queryType, "?").concat(query, "&appid=").concat(settings.apiKey, "&units=").concat(settings.units, "&lang=").concat(settings.language);
-    };
-    return BaseAPI;
-}());
-exports.default = BaseAPI;
+    buildURL(queryType, query) {
+        const { BASE_URL, settings } = this;
+        return `${BASE_URL + queryType}?${query}&appid=${settings.apiKey}&units=${settings.units}&lang=${settings.language}`;
+    }
+}
+export default BaseAPI;

@@ -1,6 +1,6 @@
-import { CountryCode } from "./CountryCode";
-import { Coordinate } from "./Unit";
-import { WeatherCondition } from "./WeatherConditions";
+import { CountryCode } from "./CountryCode.js";
+import { Coordinate } from "./Unit.js";
+import { WeatherCondition } from "./WeatherConditions.js";
 export interface Weather {
     id: WeatherCondition;
     main: string;

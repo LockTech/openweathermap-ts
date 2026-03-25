@@ -1,4 +1,4 @@
-import { Time, Main, Weather, Clouds, Wind, ForecastPrecipitation, City } from "./WeatherResponse";
+import { Time, Main, Weather, Clouds, Wind, ForecastPrecipitation, City } from "./WeatherResponse.js";
 export interface ThreeHourResponse {
     cod: string;
     message: number;

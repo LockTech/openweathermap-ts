@@ -1,4 +1,4 @@
-import { CountryCode, QueryType } from './index'
+import { CountryCode, QueryType } from './index.js'
 
 //
 // Parent Methods

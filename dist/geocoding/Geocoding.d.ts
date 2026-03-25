@@ -1,6 +1,6 @@
-import { CountryCode } from "../types";
-import BaseAPI from '../BaseAPI';
-import { ByZipCodeResponse, DirectGeoResponse } from "../types/GeoResponse";
+import { CountryCode } from "../types/index.js";
+import BaseAPI from '../BaseAPI.js';
+import { ByZipCodeResponse, DirectGeoResponse } from "../types/GeoResponse.js";
 declare class Geocoding extends BaseAPI {
     constructor({ apiKey, units, language }: {
         apiKey: any;

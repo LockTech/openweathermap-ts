@@ -1,4 +1,4 @@
-import { Unit, Language, QueryType, InitialSettings } from './types';
+import { Unit, Language, QueryType, InitialSettings } from './types/index.js';
 declare class BaseAPI {
     protected settings: InitialSettings;
     protected BASE_URL: string;

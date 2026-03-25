@@ -1,6 +1,6 @@
-import { CountryCode } from "./CountryCode";
-import { Coordinate } from "./Unit";
-import { WeatherCondition } from "./WeatherConditions";
+import { CountryCode } from "./CountryCode.js";
+import { Coordinate } from "./Unit.js";
+import { WeatherCondition } from "./WeatherConditions.js";
 
 
 export interface Weather {
@@ -19,7 +19,7 @@ export interface Main {
     pressure: number; // Pressure in hPa
     humidity: number; // in %
     temp_min: number; // Unit Default: Kelvin, Metric: Celsius, Imperial: Fahrenheit.
-    temp_max: number; 
+    temp_max: number;
     sea_level: number; // Pressure in hPa at sea_level
     grnd_level: number; // Pressure in hPa at grnd_level
 }
@@ -30,7 +30,7 @@ export interface Wind {
     speed: number; // Wind speed. Unit Default: meter/sec, Metric: meter/sec, Imperial: miles/hour.
     deg: number; // Wind direction, degrees (meteorological)
     gust?: number; // Wind gust. Unit Default: meter/sec, Metric: meter/sec, Imperial: miles/hour.
-}   
+}
 
 export interface Clouds {
     all: number; // Cloudiness, %

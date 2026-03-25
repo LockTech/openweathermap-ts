@@ -1,9 +1,9 @@
 import { constants } from "buffer";
-import {DIRECT_GEO, GEOCODING_API_NAME, GEOCODING_API_VERSION, REVERSE_GEO, ZIP_GEO } from "../helpers";
-import { CountryCode, InitialSettings } from "../types";
-import BaseAPI from '../BaseAPI';
-import { ByZipCodeResponse, DirectGeoResponse } from "../types/GeoResponse";
-import fetch from "node-fetch";
+import {DIRECT_GEO, GEOCODING_API_NAME, GEOCODING_API_VERSION, REVERSE_GEO, ZIP_GEO } from "../helpers/index.js";
+import { CountryCode, InitialSettings } from "../types/index.js";
+import BaseAPI from '../BaseAPI.js';
+import { ByZipCodeResponse, DirectGeoResponse } from "../types/GeoResponse.js";
+
 class Geocoding extends BaseAPI {
 
     constructor({
@@ -20,7 +20,7 @@ class Geocoding extends BaseAPI {
     }
 
     /**
-     * 
+     *
      * @param cityName CityName to search for
      * @param countryCode ISO 3166 Country Codes
      * @param stateCode StateCode to filter down the search
@@ -42,10 +42,10 @@ class Geocoding extends BaseAPI {
     }
 
     /**
-     * 
+     *
      * @param zipCode Zip Code of the Citry
      * @param countryCode ISO 3166 Country Codes
-     * @returns 
+     * @returns
      */
     public getGeoCoordinatesByZipCode(zipCode: string, countryCode: CountryCode): Promise<ByZipCodeResponse> {
         return new Promise<ByZipCodeResponse>(async (resolve, reject) => {
@@ -62,9 +62,9 @@ class Geocoding extends BaseAPI {
     }
 
     /**
-     * 
-     * @param cityName 
-     * @returns 
+     *
+     * @param cityName
+     * @returns
      */
     public getGeoCoordinatesByCityName(cityName: string): Promise<DirectGeoResponse> {
         return new Promise<DirectGeoResponse>(async (resolve, reject) => {
@@ -81,11 +81,11 @@ class Geocoding extends BaseAPI {
     }
 
     /**
-     * 
+     *
      * @param lat Geographical Latitude
      * @param lon Geographical Longitude
      * @param limit Number of the location names in the API response (several results can be returned in the API response)
-     * @returns 
+     * @returns
      */
     public getLocationNameByGeoCoordinates(lat: number, lon: number, limit?: number): Promise<DirectGeoResponse> {
         return new Promise<DirectGeoResponse>(async (resolve, reject) => {

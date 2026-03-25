@@ -1,6 +1,6 @@
-import { Unit, CountryCode, Language, QueryType, InitialSettings, Location, SetCurrentWeatherByCityName, GetByCityName, GetByCityId, GetByGeoCoordinates } from './types';
-import BaseAPI from './BaseAPI';
-import Geocoding from './geocoding/Geocoding';
+import { Unit, CountryCode, Language, QueryType, InitialSettings, Location, SetCurrentWeatherByCityName, GetByCityName, GetByCityId, GetByGeoCoordinates } from './types/index.js';
+import BaseAPI from './BaseAPI.js';
+import Geocoding from './geocoding/Geocoding.js';
 declare class OpenWeather extends BaseAPI {
     protected location: Location;
     geocoding: Geocoding;

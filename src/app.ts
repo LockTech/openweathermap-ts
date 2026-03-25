@@ -1,4 +1,4 @@
-import OpenWeather from './OpenWeather';
+import OpenWeather from './OpenWeather.js';
 import {
   AirPollutionResponse,
   CountryCode,
@@ -6,9 +6,9 @@ import {
   CurrentWeatherResponse,
   ThreeHourResponse,
   InitialSettings
-} from './types';
-import { AIR_POLLUTION, CURRENT_WEATHER_ENDPOINT, FORECAST } from './helpers';
-import Geocoding from './geocoding/Geocoding';
+} from './types/index.js';
+import { AIR_POLLUTION, CURRENT_WEATHER_ENDPOINT, FORECAST } from './helpers/index.js';
+import Geocoding from './geocoding/Geocoding.js';
 
 class OpenWeatherMap extends OpenWeather {
 

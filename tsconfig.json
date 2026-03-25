@@ -1,8 +1,10 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es2020",
+    "lib": ["ES2020", "DOM"],
     "declaration": true,
-    "module": "commonjs",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
     "outDir": "dist",
     "sourceMap": false,
     "allowSyntheticDefaultImports": true,

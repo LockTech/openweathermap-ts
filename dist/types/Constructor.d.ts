@@ -1,4 +1,4 @@
-import { Unit, CountryCode } from './index';
+import { Unit, CountryCode } from './index.js';
 export interface Settings {
     units?: Unit;
     language?: string;

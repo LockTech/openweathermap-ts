@@ -1,4 +1,4 @@
-import { CountryCode } from "./CountryCode";
+import { CountryCode } from "./CountryCode.js";
 
 export type DirectGeoResponse = DirectGeoResponseItem[]
 export interface DirectGeoResponseItem {

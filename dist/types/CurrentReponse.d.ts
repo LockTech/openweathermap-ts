@@ -1,6 +1,6 @@
-import { CountryCode } from "./CountryCode";
-import { Coordinate } from "./Unit";
-import { Base, Clouds, Main, Precipitation, Weather, Wind, Time } from "./WeatherResponse";
+import { CountryCode } from "./CountryCode.js";
+import { Coordinate } from "./Unit.js";
+import { Base, Clouds, Main, Precipitation, Weather, Wind, Time } from "./WeatherResponse.js";
 export interface CurrentWeatherSys {
     type?: number;
     id?: number;

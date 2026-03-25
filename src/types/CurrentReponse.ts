@@ -1,9 +1,9 @@
 // 20200516233806
 // https://openweathermap.org/data/2.5/weather?q=London,uk&appid=439d4b804bc8187953eb36d2a8c26a02
 
-import { CountryCode } from "./CountryCode";
-import { Coordinate } from "./Unit";
-import { Base, Clouds, Main, Precipitation, Weather, Wind, Time } from "./WeatherResponse";
+import { CountryCode } from "./CountryCode.js";
+import { Coordinate } from "./Unit.js";
+import { Base, Clouds, Main, Precipitation, Weather, Wind, Time } from "./WeatherResponse.js";
 
 
 export interface CurrentWeatherSys {
@@ -27,7 +27,7 @@ export interface CurrentWeatherResponse {
     snow?: Precipitation;
     dt: number;
     sys: CurrentWeatherSys;
-    timezone: number; // 
+    timezone: number; //
     id: number; // City-ID
     name: string; // City Name
     cod: number; // Internal parameter

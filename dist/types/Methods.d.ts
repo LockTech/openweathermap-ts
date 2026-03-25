@@ -1,4 +1,4 @@
-import { CountryCode, QueryType } from './index';
+import { CountryCode, QueryType } from './index.js';
 export interface SetCurrentWeatherByCityName {
     cityName: string;
     state?: string;

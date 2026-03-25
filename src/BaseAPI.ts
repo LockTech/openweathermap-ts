@@ -3,8 +3,8 @@ import {
   Language,
   QueryType,
   InitialSettings,
-} from './types';
-import { SCHEME, API_HOST} from './helpers';
+} from './types/index.js';
+import { SCHEME, API_HOST} from './helpers/index.js';
 
 class BaseAPI {
   protected settings: InitialSettings;
